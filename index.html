@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Matters | Alzheimer's Support</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            /* New color scheme - brown, beige, white, grey */
+            --primary:#614730;
+            --primary-dark: #6B5745;
+            --secondary: #D2B48C;
+            --light-beige: #F5F5DC;
+            --beige: #E8DCC4;
+            --light-grey: #E5E5E5;
+            --medium-grey: #A9A9A9;
+            --dark-grey: #696969;
+            --white: #FFFFFF;
+            --text-dark: #333333;
+            --text-medium: #666666;
+            --text-light: #999999;
+            --emergency: #B22222;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--light-beige);
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary);
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: var(--primary-dark);
+        }
+        
+        button, .btn {
+            cursor: pointer;
+            padding: 12px 24px;
+            border-radius: 5px;
+            border: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo a {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo img {
+            height: 40px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .header-actions {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .donate-btn {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        
+        .donate-btn:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .search-btn {
+            background: transparent;
+            border: none;
+            font-size: 20px;
+            color: var(--text-dark);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/api/placeholder/1200/800') center/cover no-repeat;
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .primary-btn {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        
+        .primary-btn:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .secondary-btn {
+            background-color: var(--white);
+            color: var(--primary);
+        }
+        
+        .secondary-btn:hover {
+            background-color: var(--light-grey);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-header h2 {
+            font-size: 36px;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+        
+        .section-header p {
+            font-size: 18px;
+            color: var(--text-medium);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background-color: var(--light-beige);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+            text-align: center;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+        
+        .feature-card p {
+            color: var(--text-medium);
+            margin-bottom: 20px;
+        }
+        
+        .feature-link {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        /* Tools Section */
+        .tools {
+            padding: 80px 0;
+            background-color: var(--beige);
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .tool-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .tool-image {
+            height: 200px;
+            background-position: center;
+            background-size: cover;
+        }
+        
+        .tool-content {
+            padding: 25px;
+        }
+        
+        .tool-content h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+        
+        .tool-content p {
+            color: var(--text-medium);
+            margin-bottom: 20px;
+        }
+        
+        /* Journal Section */
+        .journals {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .journal-slider {
+            overflow: hidden;
+            position: relative;
+            margin: 0 -15px;
+        }
+        
+        .journal-slides {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .journal-slide {
+            min-width: 300px;
+            margin: 0 15px;
+            background-color: var(--light-beige);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .journal-image {
+            height: 180px;
+            background-position: center;
+            background-size: cover;
+        }
+        
+        .journal-content {
+            padding: 25px;
+        }
+        
+        .journal-content h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .journal-content p {
+            color: var(--text-medium);
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+        
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            gap: 15px;
+        }
+        
+        .slider-control {
+            background-color: var(--primary);
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        
+        /* Emergency Contact Section */
+        .emergency-section {
+            padding: 60px 0;
+            background-color: var(--beige);
+        }
+        
+        .emergency-container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .emergency-info {
+            flex: 1;
+        }
+        
+        .emergency-info h2 {
+            font-size: 32px;
+            color: var(--emergency);
+            margin-bottom: 20px;
+        }
+        
+        .emergency-info p {
+            margin-bottom: 25px;
+            font-size: 17px;
+        }
+        
+        .emergency-contacts {
+            flex: 1;
+        }
+        
+        .contact-card {
+            background-color: var(--light-beige);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .contact-icon {
+            color: var(--emergency);
+            font-size: 24px;
+        }
+        
+        .contact-details h4 {
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+        
+        .emergency-btn {
+            background-color: var(--emergency);
+            color: var(--white);
+            font-size: 18px;
+            padding: 15px 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border-radius: 8px;
+        }
+        
+        .emergency-btn:hover {
+            background-color: #8B0000;
+        }
+        
+        /* Location Section */
+        .location-section {
+            padding: 80px 0;
+            background-color: var(--light-beige);
+        }
+        
+        .map-container {
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 40px;
+            background-color: var(--light-grey);
+        }
+        
+        /* Contact Form Section */
+        .contact-section {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .contact-info {
+            padding: 30px;
+            background-color: var(--light-beige);
+            border-radius: 10px;
+        }
+        
+        .contact-info h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .contact-details {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .contact-details li {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .contact-icon {
+            min-width: 40px;
+            height: 40px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 18px;
+        }
+        
+        .contact-text {
+            color: var(--text-medium);
+        }
+        
+        .contact-text strong {
+            display: block;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+        }
+        
+        .contact-form {
+            background-color: var(--light-beige);
+            padding: 30px;
+            border-radius: 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--light-grey);
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary);
+            outline: none;
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .submit-btn {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        /* Chat Box */
+        .chat-box {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 99;
+        }
+        
+        .chat-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .chat-popup {
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            width: 350px;
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            display: none;
+        }
+        
+        .chat-header {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .chat-header h3 {
+            font-size: 18px;
+        }
+        
+        .close-chat {
+            background: transparent;
+            border: none;
+            color: var(--white);
+            font-size: 20px;
+            cursor: pointer;
+        }
+        
+        .chat-body {
+            height: 300px;
+            padding: 15px;
+            overflow-y: auto;
+        }
+        
+        .chat-message {
+            margin-bottom: 15px;
+            max-width: 80%;
+        }
+        
+        .bot-message {
+            background-color: var(--light-beige);
+            padding: 10px 15px;
+            border-radius: 15px 15px 15px 0;
+        }
+        
+        .user-message {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 10px 15px;
+            border-radius: 15px 15px 0 15px;
+            margin-left: auto;
+        }
+        
+        .chat-input {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #eee;
+        }
+        
+        .message-input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid var(--light-grey);
+            border-radius: 20px;
+            margin-right: 10px;
+        }
+        
+        .send-btn {
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        
+        /* Newsletter Section */
+        .newsletter-section {
+            padding: 60px 0;
+            background-color: var(--beige);
+            text-align: center;
+        }
+        
+        .newsletter-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-container h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+        
+        .newsletter-container p {
+            color: var(--text-medium);
+            margin-bottom: 25px;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .newsletter-input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid var(--light-grey);
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .subscribe-btn {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-grey);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--light-grey);
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--white);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--medium-grey);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+        
+        .social-link:hover {
+            background-color: var(--primary);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid var(--medium-grey);
+            color: var(--light-grey);
+            font-size: 14px;
+        }
+        
+        /* Personal Plan Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background-color: var(--white);
+            border-radius: 10px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .modal-header {
+            padding: 20px;
+            border-bottom: 1px solid var(--light-grey);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .modal-header h2 {
+            font-size: 24px;
+            color: var(--text-dark);
+        }
+        
+        .close-modal {
+            background: transparent;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text-medium);
+        }
+        
+        .modal-body {
+            padding: 20px;
+        }
+        
+        .plan-form .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .plan-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .plan-form input, .plan-form select, .plan-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--light-grey);
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .plan-form textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .plan-form button {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        .plan-form button:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+            background-color: var(--light-beige);
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background-color: var(--white);
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 18px;
+            color: var(--text-dark);
+            transition: background-color 0.3s;
+        }
+        
+        .faq-question:hover {
+            background-color: var(--light-beige);
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-answer.active {
+            padding: 0 20px 20px;
+            max-height: 500px;
+        }
+        
+        .faq-toggle {
+            font-size: 20px;
+            transition: transform 0.3s;
+        }
+        
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .nav-links {
+                gap: 20px;
+            }
+            
+            .emergency-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: var(--white);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .feature-card, .tool-card, .journal-slide {
+                min-width: 250px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .header-actions {
+                display: none;
+            }
+            
+            .hero {
+                padding: 70px 0;
+            }
+            
+            .hero h1 {
+                font-size: 30px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .section-header h2 {
+                font-size: 28px;
+            }
+            
+            .chat-popup {
+                width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="#"><span style="color: var(--primary);">Memory</span>Matters</a>
+            </div>
+            
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#about">About Alzheimer's</a></li>
+                    <li><a href="#tools">Tools & Resources</a></li>
+                    <li><a href="#journals">Journals</a></li>
+                    <li><a href="#help">Help Center</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <button class="donate-btn">Donate</button>
+                <button class="search-btn">🔍</button>
+            </div>
+            
+            <div class="mobile-menu">☰</div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Supporting Alzheimer's Patients & Caregivers</h1>
+            <p>We provide resources, tools, and a community to help navigate the Alzheimer's journey together.</p>
+            <div class="hero-buttons">
+                <button class="primary-btn" id="plan-btn">Create Personal Plan</button>
+                <button class="secondary-btn">Find Local Support</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section class="features" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>How We Help</h2>
+                <p>Comprehensive support for patients and caregivers affected by Alzheimer's disease.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3>Personalized Care Plans</h3>
+                    <p>Create customized care plans tailored to specific needs and stages of Alzheimer's progression.</p>
+                    <a href="#" class="feature-link">Learn More →</a>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Educational Resources</h3>
+                    <p>Access to the latest research, articles, and educational materials about Alzheimer's disease.</p>
+                    <a href="#" class="feature-link">Learn More →</a>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Community Support</h3>
+                    <p>Connect with others facing similar challenges through support groups and community forums.</p>
+                    <a href="#" class="feature-link">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Tools Section -->
+    <section class="tools" id="tools">
+        <div class="container">
+            <div class="section-header">
+                <h2>Memory Aid Tools</h2>
+                <p>Practical tools designed to support cognitive function and daily living.</p>
+            </div>
+            
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-image" style="background-color: #d8e2dc;"></div>
+                    <div class="tool-content">
+                        <h3>Memory Calendar</h3>
+                        <p>Interactive calendar with reminders for medications, appointments, and daily routines.</p>
+                        <a href="#" class="primary-btn">Use Tool</a>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-image" style="background-color: #ffcad4;"></div>
+                    <div class="tool-content">
+                        <h3>Photo Memory Bank</h3>
+                        <p>Create and store labeled photos of family members, friends, and important life events.</p>
+                        <a href="#" class="primary-btn">Use Tool</a>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-image" style="background-color: #e2ece9;"></div>
+                    <div class="tool-content">
+                        <h3>Cognitive Exercises</h3>
+                        <p>Brain training activities designed to help maintain cognitive function and memory.</p>
+                        <a href="#" class="primary-btn">Use Tool</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Journal Section -->
+    <section class="journals" id="journals">
+        <div class="container">
+            <div class="section-header">
+                <h2>Latest Journals & Research</h2>
+                <p>Stay informed with the latest developments in Alzheimer's research and treatment.</p>
+            </div>
+            
+            <div class="journal-slider">
+                <div class="journal-slides">
+                    <div class="journal-slide">
+                        <div class="journal-image" style="background-color: #cee5ce;"></div>
+                        <div class="journal-content">
+                            <h3>New Treatments Showing Promise</h3>
+                            <p>Recent clinical trials reveal potential breakthroughs in slowing cognitive decline.</p>
+                            <a href="#" class="feature-link">Read More →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="journal-slide">
+                        <div class="journal-image" style="background-color: #e0fbfc;"></div>
+                        <div class="journal-content">
+                            <h3>Diet and Alzheimer's Prevention</h3>
+                            <p>Research suggests certain dietary patterns may reduce the risk of developing Alzheimer's.</p>
+                            <a href="#" class="feature-link">Read More →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="journal-slide">
+                        <div class="journal-image" style="background-color: #f7ede2;"></div>
+                        <div class="journal-content">
+                            <h3>Caregiver Stress Management</h3>
+                            <p>Effective strategies for caregivers to manage stress and prevent burnout.</p>
+                            <a href="#" class="feature-link">Read More →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="journal-slide">
+                        <div class="journal-image" style="background-color: #3a2709;"></div>
+                        <div class="journal-content">
+                            <h3>Early Signs and Diagnosis</h3>
+                            <p>Understanding the early warning signs and the importance of timely diagnosis.</p>
+                            <a href="#" class="feature-link">Read More →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slider-controls">
+                    <div class="slider-control prev-slide">←</div>
+                    <div class="slider-control next-slide">→</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Emergency Section -->
+    <section class="emergency-section" id="help">
+        <div class="container">
+            <div class="emergency-container">
+                <div class="emergency-info">
+                    <h2>Emergency Assistance</h2>
+                    <p>Access immediate help and support for Alzheimer's-related emergencies. Our hotline is available 24/7 for urgent situations requiring guidance or intervention.</p>
+                    <a href="tel:800-123-4567" class="emergency-btn">
+                        <span>Call Helpline</span> 📞
+                    </a>
+                </div>
+                
+                <div class="emergency-contacts">
+                    <div class="contact-card">
+                        <div class="contact-icon">🏥</div>
+                        <div class="contact-details">
+                            <h4>Medical Emergency</h4>
+                            <p>Call 911 or your local emergency number</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">🔔</div>
+                        <div class="contact-details">
+                            <h4>Crisis Support</h4>
+                            <p>24/7 Hotline: 800-123-4567</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">👨‍⚕️</div>
+                        <div class="contact-details">
+                            <h4>Find Doctors</h4>
+                            <p>Specialized Alzheimer's physicians near you</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Location Section -->
+    <section class="location-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Find Local Support</h2>
+                <p>Locate support groups, memory care facilities, and specialized services in your area.</p>
+            </div>
+            
+            <div class="map-container" id="map">
+                <!-- Map will be loaded here via JavaScript -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- Chat Box -->
+    <div class="chat-box">
+        <div class="chat-button" id="chat-button">💬</div>
+        
+        <div class="chat-popup" id="chat-popup">
+            <div class="chat-header">
+                <h3>Support Chat</h3>
+                <button class="close-chat" id="close-chat">×</button>
+            </div>
+            
+            <div class="chat-body" id="chat-body">
+                <div class="chat-message">
+                    <div class="bot-message">Hello! How can I assist you today with Alzheimer's support?</div>
+                </div>
+            </div>
+            
+            <div class="chat-input">
+                <input type="text" class="message-input" id="message-input" placeholder="Type your message...">
+                <button class="send-btn" id="send-btn">➤</button>
+            </div>
+        </div>
+    </div>
+
+<section class="contact-section" id="contact">
+    <div class="container">
+        <div class="section-header">
+            <h2>Contact Us</h2>
+            <p>Reach out to us for support, questions, or more information about our services.</p>
+        </div>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <ul class="contact-details">
+                    <li>
+                        <div class="contact-icon">📱</div>
+                        <div class="contact-text">
+                            <strong>Phone</strong>
+                            +1 (800) 123-4567
+                        </div>
+                    </li>
+                    <li>
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-text">
+                            <strong>Email</strong>
+                            support@memorymatters.org
+                        </div>
+                    </li>
+                    <li>
+                        <div class="contact-icon">🏢</div>
+                        <div class="contact-text">
+                            <strong>Address</strong>
+                            123 Memory Lane, Alzheimer's Center<br>
+                            San Francisco, CA 94107
+                        </div>
+                    </li>
+                    <li>
+                        <div class="contact-icon">⏰</div>
+                        <div class="contact-text">
+                            <strong>Hours</strong>
+                            Monday - Friday: 9am - 5pm<br>
+                            Support Line: 24/7
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="contact-form">
+                <h3>Send Us a Message</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="What is this regarding?">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Your Message or Suggestion</label>
+                        <textarea id="message" name="message" placeholder="Type your message or suggestion here..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Memory Matters</h3>
+                <p>Supporting Alzheimer's patients and caregivers with resources, tools, and community services.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link">f</a>
+                    <a href="#" class="social-link">t</a>
+                    <a href="#" class="social-link">in</a>
+                    <a href="#" class="social-link">ig</a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#about">About Alzheimer's</a></li>
+                    <li><a href="#tools">Tools & Resources</a></li>
+                    <li><a href="#journals">Research & Journals</a></li>
+                    <li><a href="#help">Emergency Help</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Caregiver Support</a></li>
+                    <li><a href="#">Early-Stage Guide</a></li>
+                    <li><a href="#">Legal & Financial</a></li>
+                    <li><a href="#">Memory Exercises</a></li>
+                    <li><a href="#">Support Groups</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Newsletter</h3>
+                <p>Subscribe to our newsletter for the latest updates, research, and support resources.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" class="newsletter-input">
+                    <button type="submit" class="subscribe-btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="copyright">© 2025 Memory Matters. All Rights Reserved.</div>
+            <div class="attribution">Designed by <a href="#">@ananyarajankar</a></div>
+        </div>
+    </div>
+</footer>
