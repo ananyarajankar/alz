@@ -10,7 +10,7 @@
             font-family: 'Inter', sans-serif;
         }
         .hero-bg {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/api/placeholder/1600/900');
+            background-image:url('about header pic.jpg');
             background-size: cover;
             background-position: center;
         }
@@ -32,7 +32,6 @@
             <a href="#overview" class="text-blue-700 hover:text-blue-900">Overview</a>
             <a href="#symptoms" class="text-blue-700 hover:text-blue-900">Symptoms</a>
             <a href="#stages" class="text-blue-700 hover:text-blue-900">Stages</a>
-            <a href="#research" class="text-blue-700 hover:text-blue-900">Research</a>
         </div>
     </nav>
 
@@ -141,19 +140,41 @@
                 </div>
             </div>
         </section>
-
-        <section class="text-center bg-blue-100 rounded-lg p-12 mb-12">
-            <h2 class="text-3xl font-bold text-blue-800 mb-6">Support and Resources</h2>
-            <p class="text-gray-700 max-w-2xl mx-auto mb-8">
-                If you're concerned about memory problems or have been recently diagnosed, explore our resources and reach out to healthcare professionals.
-            </p>
-            <div class="flex justify-center space-x-6">
-                <a href="#" class="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition">
-                    Find Support
-                </a>
-                <a href="#" class="bg-white text-blue-600 px-8 py-3 rounded-full border border-blue-600 hover:bg-blue-50 transition">
-                    Download Resources
-                </a>
+        <section id="treatment" class="section-bg p-8 rounded-lg mb-12">
+            <h2 class="text-3xl font-bold text-blue-800 mb-6">
+                Treatment for Alzheimer's Disease
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="font-semibold text-blue-700 mb-3">Medications</h3>
+                    <p class="text-gray-700 mb-4">
+                        There are several medications approved by the FDA to help manage symptoms of Alzheimer's disease. These include:
+                    </p>
+                    <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                        <li>Donepezil (Aricept)</li>
+                        <li>Rivastigmine (Exelon)</li>
+                        <li>Galantamine (Razadyne)</li>
+                        <li>Memantine (Namenda)</li>
+                    </ul>
+                    <p class="text-gray-700">
+                        These medications can help improve memory, thinking, and daily functioning for some individuals.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-blue-700 mb-3">Non-Pharmacological Approaches</h3>
+                    <p class="text-gray-700 mb-4">
+                        In addition to medications, various non-drug approaches can be beneficial, including:
+                    </p>
+                    <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                        <li>Cognitive stimulation therapy</li>
+                        <li>Physical exercise</li>
+                        <li>Social engagement and activities</li>
+                        <li>Music and art therapy</li>
+                    </ul>
+                    <p class="text-gray-700">
+                        These approaches can help improve quality of life and may slow the progression of symptoms.
+                    </p>
+                </div>
             </div>
         </section>
     </main>
@@ -161,11 +182,9 @@
     <footer class="bg-gray-800 text-white py-8">
         <div class="container mx-auto px-4 text-center">
             <div class="flex justify-center space-x-6 mb-4">
-                <a href="#" class="hover:text-blue-300">Contact</a>
-                <a href="#" class="hover:text-blue-300">Privacy Policy</a>
-                <a href="#" class="hover:text-blue-300">Terms of Service</a>
+                <a href="index.html" class="hover:text-blue-300">For more help and support, please visit our Home page. </a>
             </div>
-            <p class="text-gray-400">&copy; 2025 EverCare. All rights reserved.</p>
+            <p class="text-gray-400">&copy; 2025 EverCare.</p>
         </div>
     </footer>
 </body>
