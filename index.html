@@ -27,6 +27,7 @@
             --text-medium: #666666;
             --text-light: #999999;
             --emergency: #B22222;
+            --jet-black:#333333;
         }
         
         body {
@@ -132,10 +133,13 @@
             cursor: pointer;
         }
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/api/placeholder/1200/800') center/cover no-repeat;
-            color: var(--white);
+            background-image:url('index ph.jpg');
+            color: var(--jet-black);
             padding: 100px 0;
             text-align: center;
+            background-size: cover; 
+            background-position: top; 
+            background-repeat: no-repeat;
         }
         
         .hero h1 {
